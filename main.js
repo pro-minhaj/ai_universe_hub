@@ -1,7 +1,7 @@
-const dataLoad = () =>{
+const dataLoad = (dataLimit) =>{
     fetch(`https://openapi.programming-hero.com/api/ai/tools`)
     .then(res => res.json())
-    .then(data => products(data.data))
+    .then(data => products(data.data, dataLimit));
 }
 
 const detailsData = (id) =>{
@@ -55,8 +55,19 @@ const details = (data) =>{
 
 }
 
-const products = data =>{
+const products = (data, dataLimit) =>{
+    const seeMoreArea = document.getElementById('see-more-area');
+    
+    if(dataLimit && data.tools.length > 6){
+        data.tools = data.tools.slice(0, 6);
+        seeMoreArea.classList.remove('d-none');
+    }
+    else{
+        seeMoreArea.classList.add('d-none');
+    }
     const cardContainer = document.getElementById('card-container');
+    cardContainer.innerHTML = '';
+
     data.tools.forEach((element, i) => {
         const newCard = document.createElement('div');
         newCard.classList.add('col-md-6', 'col-lg-4', 'd-flex', 'align-items-stretch');
@@ -99,4 +110,8 @@ const products = data =>{
     spinnerContainer.classList.add('d-none');
 }
 
-dataLoad();
+document.getElementById('see-more-btn').addEventListener('click', ()=>{
+    dataLoad();
+})
+
+dataLoad(6);

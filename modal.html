@@ -1,23 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/2e4412b04e.js" crossorigin="anonymous"></script>
-    <title>AI Universe Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
     <style>
-        body{
-            font-family: Work Sans;
-        }
-        h1, h2, h3, h4, h5, h6{
-            font-family: Work Sans;
-        }
-        .details-btn{
-            background-color: #FEF7F7;
-            width: 50px;
-            height: 50px;
-        }
         .modal-ui {
             background-color:  rgba(235, 87, 87, 0.05);
             border-color: #EB5757 !important;
@@ -74,30 +66,17 @@
             border-radius: 0.5rem;
             padding: 5px 15px;
         }
-    </style>
-</head>
-<body class="container">
-    <!-- Header Section -->
-    <header class="text-center py-4">
-        <h1 class="mb-3 text-black fw-semibold">AI Universe Hub</h1>
-        <button class="btn btn-danger py-2 px-3 fs-6">Sort By Date</button>
-    </header>
-    <!-- Header End -->
-    
-    <!-- Main Start -->
-    <main class="my-4">
-        <!-- Card Container -->
-        <section>
-            <div id="card-container" class="row g-4">
-            </div> 
-            </div>
-            <div class="mt-4 text-center">
-                <button class="btn btn-danger py-2 px-4">See More</button>
-            </div>
-        </section>
+      </style>
+
+  </head>
+  <body>
 
         <!-- Modal Section -->
         <section>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#universe-details">
+                Launch static backdrop modal
+            </button>
             
             <!-- Modal -->
             <div class="modal fade" id="universe-details" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="universe-detailsLabel" aria-hidden="true">
@@ -109,36 +88,27 @@
                         <div class="row g-6">
                             <div class="col-12 col-md-6 d-flex align-items-stretch">
                                 <div class="modal-ui border rounded-4">
-                                    <h3 id="modail-heading" class="pb-3">ChatGPT is an AI-powered chatbot platform that uses OpenAI's GPT technology to simulate human conversation.</h3>
+                                    <h3 class="pb-3">ChatGPT is an AI-powered chatbot platform that uses OpenAI's GPT technology to simulate human conversation.</h3>
                                 <div class="d-flex align-items-center justify-content-center flex-wrap gap-3">
-                                    <div class="d-flex flex-column pricing bg-white rounded-4 fs-6 text-success fw-bold text-center">
-                                        <p id="pricing-price" class="mb-0"></p>
-                                        <span id="pricing-plan"></span>
-                                    </div>
-                                    <div class="d-flex flex-column pricing bg-white rounded-4 fs-6 text-success fw-bold text-center">
-                                        <p id="pricing-price-pro" class="mb-0">$10 month</p>
-                                        <span id="pricing-plan-pro">Pro</span>
-                                    </div>
-                                    <div class="d-flex flex-column pricing bg-white rounded-4 fs-6 text-success fw-bold text-center">
-                                        <p id="pricing-price-third" class="mb-0">$10 month</p>
-                                        <span id="pricing-plan-third">Pro</span>
-                                    </div>
+                                    <p class="pricing bg-white rounded-4 fs-6 text-success fw-bold text-center"><span>$10</span>/ month basic</p>
+                                    <p class="pricing bg-white rounded-4 fs-6 text-warning fw-bold text-center"><span>$10</span>/ month pro</p>
+                                    <p class="pricing bg-white rounded-4 fs-6 text-danger fw-bold text-center">contact us Enterprise</p>
                                 </div>
                                 <div class="d-flex md-justify-content-center gap-4 flex-wrap pt-3">
                                     <div class="feature">
                                         <h3 class="mb-3">Features</h3>
                                         <ul>
-                                            <li id="features-1">Customizable responses</li>
-                                            <li id="features-2">Multilingual support</li>
-                                            <li id="features-3">Seamless integration</li>
+                                            <li>Customizable responses</li>
+                                            <li>Multilingual support</li>
+                                            <li>Seamless integration</li>
                                         </ul>
                                     </div>
                                     <div class="feature">
                                         <h3 class="mb-3">Integrations</h3>
                                         <ul>
-                                            <li id="integrations-1">FB Messenger</li>
-                                            <li id="integrations-2">Slack</li>
-                                            <li id="integrations-3">Telegram</li>
+                                            <li>FB Messenger</li>
+                                            <li>Slack</li>
+                                            <li>Telegram</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -148,12 +118,12 @@
                             <div class="col-12 col-md-6 d-flex align-items-stretch">
                                 <div class="modal-ui second-modal border rounded-4">
                                     <div class="position-relative">
-                                        <img id="modail-full-img" class="img-fluid w-100 rounded-4" src="Rectangle 15.png" alt="">
-                                        <p id="accuracy" class="accuracy mt-2 me-2 position-absolute top-0 end-0"><span id="accuracy-rachio">94</span>% accuracy</p>
+                                        <img class="img-fluid w-100 rounded-4" src="Rectangle 15.png" alt="">
+                                        <p class="accuracy mt-2 me-2 position-absolute top-0 end-0"><span>94</span>% accuracy</p>
                                     </div>
                                     <div class="text-center mt-4 px-3">
-                                        <h3 id="modail-body-text-content-1">Hi, how are you doing today?</h3>
-                                        <p id="modail-body-text-content-2" class="mt-3 px-3">I'm doing well, thank you for asking. How can I assist you today?</p>
+                                        <h3>Hi, how are you doing today?</h3>
+                                        <p class="mt-3 px-3">I'm doing well, thank you for asking. How can I assist you today?</p>
                                     </div>
                                 </div>
                             </div>
@@ -164,11 +134,10 @@
                 </div>
             </div>
         </section>
-        
-    </main>
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="./main.js"></script>
-</body>
+  </body>
 </html>

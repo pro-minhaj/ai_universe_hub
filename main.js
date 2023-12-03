@@ -13,6 +13,7 @@ const detailsData = (id) =>{
 const elementFun = (elementId, changeValue) =>{
     const modalHading = document.getElementById(elementId);
     modalHading.innerText = changeValue;
+
 }
 
 const details = (data) =>{
@@ -22,7 +23,7 @@ const details = (data) =>{
     elementFun('pricing-plan', data.pricing[0].plan);
     elementFun('pricing-price-pro', data.pricing[1].price);
     elementFun('pricing-plan-pro', data.pricing[1].plan);
-    elementFun('pricing-price-third', data.pricing[2].price);
+    elementFun('pricing-price-third', data.pricing[2].price.substring(0, 10));
     elementFun('pricing-plan-third', data.pricing[2].plan);
         // features
     elementFun('features-1', data.features['1'].feature_name);
@@ -49,6 +50,9 @@ const details = (data) =>{
 
     elementFun('modail-body-text-content-1', data.input_output_examples[0].input);
     elementFun('modail-body-text-content-2', data.input_output_examples[0].output);
+
+    
+
 }
 
 const products = data =>{
@@ -90,6 +94,9 @@ const products = data =>{
             cardContent.appendChild(li);
         }
     });
+    // Spinner
+    const spinnerContainer = document.getElementById('spinner-area');
+    spinnerContainer.classList.add('d-none');
 }
 
 dataLoad();
